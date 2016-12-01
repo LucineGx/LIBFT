@@ -6,7 +6,7 @@
 #    By: lgaveria <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 16:20:57 by lgaveria          #+#    #+#              #
-#    Updated: 2016/11/21 16:28:53 by lgaveria         ###   ########.fr        #
+#    Updated: 2016/11/29 19:56:50 by lgaveria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,13 @@ SRCS = ft_putchar.c \
 	   ft_putchar_fd.c \
 	   ft_putstr_fd.c \
 	   ft_putendl_fd.c \
-	   ft_putnbr_fd.c
+	   ft_putnbr_fd.c \
+	   ft_lstnew.c \
+	   ft_lstdelone.c \
+	   ft_lstdel.c \
+	   ft_lstadd.c \
+	   ft_lstiter.c \
+	   ft_lstmap.c
 
 OBJ = $(SRCS:.c=.o)
 

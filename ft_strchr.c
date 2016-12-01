@@ -6,7 +6,7 @@
 /*   By: lgaveria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 16:40:29 by lgaveria          #+#    #+#             */
-/*   Updated: 2016/11/10 17:10:46 by lgaveria         ###   ########.fr       */
+/*   Updated: 2016/11/28 17:50:00 by lgaveria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,14 @@ char	*ft_strchr(const char *s, int c)
 	int		i;
 
 	i = 0;
-	while (s[i])
+
+	while (s[i] != '\0')
 	{
 		if (s[i] == c)
 			return ((char *)&s[i]);
 		i += 1;
 	}
+	if (c == '\0')
+		return ((char *)&s[i]);
 	return (0);
 }

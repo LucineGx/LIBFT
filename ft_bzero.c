@@ -6,13 +6,13 @@
 /*   By: lgaveria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/12 18:55:14 by lgaveria          #+#    #+#             */
-/*   Updated: 2016/11/12 19:12:30 by lgaveria         ###   ########.fr       */
+/*   Updated: 2016/11/30 19:26:07 by lgaveria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	while (n > 0)
 	{

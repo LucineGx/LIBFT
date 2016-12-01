@@ -6,47 +6,36 @@
 /*   By: lgaveria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 18:22:21 by lgaveria          #+#    #+#             */
-/*   Updated: 2016/11/16 18:39:29 by lgaveria         ###   ########.fr       */
+/*   Updated: 2016/12/01 14:21:39 by lgaveria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int		ft_strlentrim(char const *str)
-{
-	int i;
-	int count;
-
-	i = 0;
-	count = 0;
-	while (str[i])
-	{
-		if (!(ft_iswhitespace(str[i])))
-			count += 1;
-		i += 1;
-	}
-	return (count);
-}
+#include <stdio.h>
 
 char	*ft_strtrim(char const *s)
 {
-	char	*ret;
-	int		i;
-	int		j;
+	unsigned int	start;
+	size_t			len;
+	char			*str;
 
-	if ((ret = malloc(sizeof(char) * ft_strlentrim(s) + 1)) == 0)
-		return (0);
-	i = 0;
-	j = 0;
-	while (s[j])
+	start = 0;
+	while (ft_iswhitespace(s[start]))
+		start++;
+	if (start == ft_strlen(s))
 	{
-		if (!(ft_iswhitespace(s[j])))
-		{
-			ret[i] = s[j];
-			i += 1;
-		}
-		j += 1;
+		if ((str = malloc(sizeof(char *))) == 0)
+			return (0);
+		str = "";
 	}
-	ret[i] = '\0';
-	return (ret);
+	else
+	{
+		len = ft_strlen(s);
+		len--;
+		while (ft_iswhitespace(s[len]))
+			len--;
+		len = len - start;
+		str = ft_strsub(s, start, len + 1);
+	}
+	return(str);
 }

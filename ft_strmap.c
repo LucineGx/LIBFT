@@ -6,7 +6,7 @@
 /*   By: lgaveria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 17:15:37 by lgaveria          #+#    #+#             */
-/*   Updated: 2016/11/16 17:22:10 by lgaveria         ###   ########.fr       */
+/*   Updated: 2016/11/30 19:37:45 by lgaveria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	char	*ret;
 	int		i;
 
-	if ((ret = malloc(sizeof(char) * ft_strlen(s)) + 1) == 0)
+	if ((ret = malloc(sizeof(char) * (ft_strlen(s)) + 1)) == 0)
 		return (0);
 	i = 0;
 	while (s[i])
