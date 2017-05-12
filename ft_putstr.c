@@ -6,7 +6,7 @@
 /*   By: lgaveria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 11:29:33 by lgaveria          #+#    #+#             */
-/*   Updated: 2016/11/21 15:58:14 by lgaveria         ###   ########.fr       */
+/*   Updated: 2017/01/25 17:58:29 by lgaveria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 void	ft_putstr(char const *s)
 {
-	write(1, s, ft_strlen(s));
+	if (!s)
+		write(1, "(null)", 6);
+	else
+		write(1, s, ft_strlen(s));
 }

@@ -6,13 +6,23 @@
 /*   By: lgaveria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 18:36:00 by lgaveria          #+#    #+#             */
-/*   Updated: 2016/11/21 11:29:10 by lgaveria         ###   ########.fr       */
+/*   Updated: 2016/12/09 20:40:53 by lgaveria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_iswhitespace(int c)
 {
-	if (c == ' ' || c == '\n' || c == '\t')
+	if (c == '\n')
+		return (1);
+	if (c == ' ')
+		return (1);
+	if (c == '\t')
+		return (1);
+	if (c == '\f')
+		return (1);
+	if (c == '\v')
+		return (1);
+	if (c == '\r')
 		return (1);
 	else
 		return (0);

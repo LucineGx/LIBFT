@@ -6,7 +6,7 @@
 #    By: lgaveria <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 16:20:57 by lgaveria          #+#    #+#              #
-#    Updated: 2016/11/29 19:56:50 by lgaveria         ###   ########.fr        #
+#    Updated: 2016/12/10 14:02:57 by lgaveria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,6 +91,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-test: all clean
-	gcc -I include main.c $(NAME)

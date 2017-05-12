@@ -6,7 +6,7 @@
 /*   By: lgaveria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 11:44:42 by lgaveria          #+#    #+#             */
-/*   Updated: 2016/11/10 11:46:15 by lgaveria         ###   ########.fr       */
+/*   Updated: 2017/01/25 18:01:36 by lgaveria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlen(const char *s)
 	size_t i;
 
 	i = 0;
+	if (!s)
+		return (0);
 	while (s[i])
 		i += 1;
 	return (i);

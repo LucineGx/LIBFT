@@ -6,19 +6,20 @@
 /*   By: lgaveria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 13:37:58 by lgaveria          #+#    #+#             */
-/*   Updated: 2016/12/01 15:14:28 by lgaveria         ###   ########.fr       */
+/*   Updated: 2016/12/09 19:12:56 by lgaveria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-int		countchar(int n)
+static int	countchar(int n)
 {
 	int	count;
 
 	if (n == -2147483648)
 		return (11);
-	if (n == 0)
+	if (n == 0 || n == -0)
 		return (1);
 	count = 0;
 	if (n < 0)
@@ -34,10 +35,10 @@ int		countchar(int n)
 	return (count);
 }
 
-char	*putinchar(int n, char *ret, int i)
+static char	*putinchar(int n, char *ret, int i)
 {
 	if (n == -0)
-		ret = "0";
+		ret[0] = '0';
 	else if (n < 0)
 	{
 		ret[0] = '-';
@@ -58,21 +59,15 @@ char	*putinchar(int n, char *ret, int i)
 	return (ret);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	char	*ret;
 	int		i;
 
 	i = countchar(n);
-	if ((ret = malloc(sizeof(char) * (i + 1))) == 0)
-		return (0);
+	if ((ret = malloc(sizeof(char) * (i + 1))) == NULL)
+		return (NULL);
 	ret[i] = '\0';
 	ret = putinchar(n, ret, i - 1);
 	return (ret);
-}
-
-int main()
-{
-	ft_putstr(ft_itoa(-2147483648));
-	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lgaveria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 17:28:13 by lgaveria          #+#    #+#             */
-/*   Updated: 2016/11/21 10:15:03 by lgaveria         ###   ########.fr       */
+/*   Updated: 2016/12/07 19:27:55 by lgaveria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int		ft_strnequ(char const *s1, char const *s2, size_t n)
 	size_t i;
 
 	i = 0;
+	if (s1 == NULL || s2 == NULL)
+		return (1);
 	while (i < n && s1[i] && s2[i])
 	{
 		if (s1[i] != s2[i])
